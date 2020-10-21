@@ -1,0 +1,68 @@
+//criar projeto angular
+ng new project
+cd project
+npm install
+//instalar angular material
+ng add @angular/material (1 opçao yes yes)
+//copiar material modules
+//add app module
+ng serve
+
+ng generate component xyz
+
+//site https://www.learnrxjs.io/ ja esta instalado (sao observables)
+
+//JSON server site github
+npm install -g json-server (instala global)
+Create a db.json file with some data
+{
+  "posts": [
+    { "id": 1, "title": "json-server", "author": "typicode" }
+  ],
+  "comments": [
+    { "id": 1, "body": "some comment", "postId": 1 }
+  ],
+  "profile": { "name": "typicode" }
+}
+//iniciar servidor
+json-server --watch db.json
+ http://localhost:3000
+//usar postman para testar se esta funcionando as requisições
+
+
+//centralizar os erros em um service
+ng g s shared/components/campos/validarCampos
+//vai gerar erro incluir em desenvolvimento
+npm install @schematics/angular@7.0.7 --save-dev
+
+//componentizar
+ng g m shared/components/campos 
+//fazer para cada parte do html
+ng g c shared/components/campos/input-text --nospec
+
+//criar interface filmes
+ng g s core/filmes --nospec
+
+//criar uma interface para ter estrutura fixa para filmes (models)
+ng g i shared/models/filme
+
+//criar modal para mensagens
+ng g c shared/components/alerta --nospec
+
+ng g i shared/models/alerta
+
+//componente listagem
+ng g c filmes/listagem-filmes --nospec
+
+//scroll infinito
+npm install ngx-infinite-scroll --save
+
+ng g i shared/models/configParams
+ng g i shared/models/campo-generico
+
+//
+ng g s core/configParams
+
+//listagem
+ng g c filmes/visualizarFilme --nospec
+
