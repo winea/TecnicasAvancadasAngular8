@@ -1,0 +1,16 @@
+<!-- coloquei [] nos atributos do input para tornar generico e ser reutilizado -->
+<div [formGroup]="formGroup">
+  <mat-form-field class="full-width">
+    <input matInput 
+           [placeholder]="titulo" 
+           [name]="controlName" 
+           [formControlName]="controlName">
+           <!-- metodo get formControl() -->
+    <mat-error *ngIf="validacao.hasErrorValidar(formControl, 'required')">
+      Campo Obrigatório</mat-error>
+    <mat-error *ngIf="validacao.hasErrorValidar(formControl, 'min')">
+      Campo precisa no min {{validacao.lenghtValidar(formControl, 'minLenght')}}</mat-error>
+    <mat-error *ngIf="validacao.hasErrorValidar(formControl, 'max')">
+      Campo no maximo {{validacao.lenghtValidar(formControl, 'maxLenght')}}</mat-error>
+  </mat-form-field>
+</div>
